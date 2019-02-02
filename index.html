@@ -3,13 +3,15 @@
 
     <head>
 
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-            integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-            crossorigin=""/>
-            <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-            crossorigin=""></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
 
+        <link rel="stylesheet" href="CSS/L.Control.MousePosition.css">
+        <script type="text/javascript" src="JS/L.Control.MousePosition.js"></script>
 
         <link href="CSS/style.css" rel="stylesheet">
         <script type="text/javascript" src="JS/main.js"></script>
@@ -22,14 +24,19 @@
 
         <script>
         // var mymap = L.map('mapid').setView([42.311383, -83.030469], 13);
-        var mymap = L.map('mapid').setView([ 42.321791482829674, -82.92778944982275], 20);
+        var mymap = L.map('mapid').setView([42.32569661894138, -82.90388453046036], 20);
 
-            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            // L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=0f27b4965b5a46ecb536aab9ddd094f8', {
+
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                 maxZoom: 18,
                 id: 'mapbox.streets',
                 accessToken: 'pk.eyJ1IjoiZHJvdWkxMWIiLCJhIjoiY2pybjAzdngwMHAwejN5dDJ1cWNwenp5NCJ9.wpRlf5Z3M23pxObm1lMcrA'
             }).addTo(mymap);
+
+            L.control.mousePosition().addTo(mymap);
+
 
 
             mymap.on('click', function(e) {
@@ -78,7 +85,27 @@
             [42.322123227715615, -82.9297560453415],[42.32206765997026, -82.92893528938295],
             [42.321968191922004, -82.9282132388471],[ 42.321794338808395, -82.92777657508852],
             [42.321536094431664, -82.92740106582643],[42.321015436166164, -82.92697620385299],
-            [42.32061938364934, -82.92661571456847]]
+            [42.32061938364934, -82.92661571456847],[42.32046800241774, -82.92638289967726],
+            [42.320369369420966, -82.92598807831384],[ 42.320298790479484, -82.92542159557343],
+            [42.320213606440426, -82.92504823220952],[42.320069898578105, -82.9248207807541],
+            [42.31971949391154, -82.92417705059053],[42.319534393507034, -82.92364168206406],
+            [42.319247955767814, -82.92214715500451],[ 42.31897432031484, -82.92033934612847],
+            [ 42.31882300579804, -82.91913449764252], [42.31871173527934, -82.9181678297755],
+            [42.31850370330987, -82.91607570641646],[42.318408798407624, -82.91501462443193],
+            [42.31822137341811, -82.91330230229505], [42.31819253887775, -82.91279911994936],
+            [42.31805756167335, -82.9115738870678],[42.32067574837814, -82.9121768474579],
+            [42.32084739649194, -82.91221976247472],[42.322621362618776, -82.91271114369012],
+            [42.32496549782263, -82.91329264608068], [42.32506609408185, -82.91220581528252],
+            [42.3251300581928, -82.91122734546663],[ 42.32518905196194, -82.91034221649171],
+            [42.325273171059365, -82.9091974498806],[42.32546200000751, -82.90699803816098],
+            [ 42.32563599515437, -82.9047975541471],[42.32569661894138, -82.90388453046036],
+            [42.32568883724745, -82.9036817551969],[42.32575232768114, -82.90303051471712],
+            [42.325682487934145, -82.90217006193419],[42.325637251222894, -82.90156173712604],
+            [42.32568010738047, -82.90103387826095],[42.32575947042359, -82.9004491566957],
+            [42.32601014651969, -82.89920568466188],[42.32620363572681, -82.89840638637544],
+            [42.33355306944702, -82.90018844611042],[42.33410110969616, -82.9027644395501],
+            [42.33499017766965, -82.90688002096432], [42.3350280042269, -82.907051682505]
+            ]
             var pointList = [];
             for (var i = 0; i < roughPoints.length; i++){
                 // pointList.push(L.LatLng(roughPoints[i][0], roughPoints[i][1]));
@@ -86,13 +113,22 @@
             }
 
 
-            var firstpolyline = new L.Polyline(pointList, {
-                color: 'purple',
-                weight: 3,
-                opacity: 0.5,
-                smoothFactor: 1
-            });
-            firstpolyline.addTo(mymap);
+             var firstpolyline = new L.Polyline(pointList, {
+                 color: 'purple',
+                 weight: 3,
+                 opacity: 0.5,
+                 smoothFactor: 1
+             });
+             firstpolyline.addTo(mymap);
+
+            // var control = L.Routing.control({
+            //     waypoints: latlngArray,
+            //     show: true,
+            //     waypointMode: 'snap',
+            //     createMarker: function() {}
+            // }).addTo(mymap);
+
+
         </script>
     </body>
 </html>
