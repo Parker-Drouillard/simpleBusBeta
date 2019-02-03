@@ -29,7 +29,7 @@
 
         <script>
         // var mymap = L.map('mapid').setView([42.311383, -83.030469], 13);
-        var mymap = L.map('mapid').setView([ 42.31496746862479, -83.03529024124147], 20);
+        var mymap = L.map('mapid').setView([42.29530688961494, -82.99003493779311], 16);
 
              L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
             // L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=0f27b4965b5a46ecb536aab9ddd094f8', {
@@ -65,7 +65,13 @@
             }
 
 
-
+            Polyline.on('mouseover', function(e) {
+                //open popup;
+                var popup = L.popup()
+                .setLatLng(e.latlng) 
+                .setContent('Popup')
+                .openOn(map);
+            });
 
             // var control = L.Routing.control({
             //     waypoints: latlngArray,
